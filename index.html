@@ -1,31 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex's Blog</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <header class="text-center mt-4">
-            <h1>Benvenuto</h1>
-            <img src="https://avatars.githubusercontent.com/u/30697661" alt="Alex's Profile" class="img-fluid rounded-circle" style="width: 200px;">
-        </header>
+    <style>
 
-        <section class="my-5">
-            <h2>Info</h2>
-            <p> 
-              Sono impegnato su vari fronti nello sviluppo software, mi dedico alla sperimentazione e all'innovazione nel poco tempo libero che ho.
-              Appassionato di architetture in cloud, lavoro principalmente con Docker, OpenShift, Azure e Kubernetes. 
-              Potete trovare i miei progetti su <a href="https://github.com/XtremeAlex" target="_blank">GitHub - XtremeAlex</a>.</p>
+        body {
+            background-color: #000000;
+            color: #000000;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container-sm {
+            padding-top: 100px;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 50px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+        }
+        .profile-card img.profile-pic {
+            width: 150px;
+            border: 5px solid #000000;
+            border-radius: 50%;
+            position: absolute;
+            top: -80px;
+            left: calc(50% - 75px);
+            background: black;
+        }
+        .social-links {
+            padding: 0;
+            list-style: none;
+        }
+        .social-links li {
+            display: inline;
+            margin: 5px;
+        }
+
+        .my-30{
+            padding-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-sm">
+    <header class="text-center mt-5">
+        <h1> </h1>
+    </header>
+
+    <div class="profile-card mx-auto">
+        <img src="https://avatars.githubusercontent.com/u/30697661" alt="Alex's Profile" class="img-fluid profile-pic">
+        <section class="my-30">
+            <h2>Alex</h2>
+            <p>
+                Sono impegnato su vari fronti nello sviluppo software, mi dedico alla sperimentazione e all'innovazione nel poco tempo libero che ho.
+                Appassionato di architetture in cloud, lavoro principalmente con Docker, OpenShift, Azure e Kubernetes.
+                Potete trovare i miei progetti su <a href="https://github.com/XtremeAlex" target="_blank">GitHub - XtremeAlex</a>.</p>
             <p>Con una vasta esperienza nella gestione di progetti IT e nel deployment di soluzioni cloud-native, ho collaborato con importanti istituzioni, ottenendo riconoscimenti per la qualità del mio lavoro.</p>
             <p>Competenze tecniche: Java, Angular, Docker, Kubernetes, CI/CD con Azure DevOps, database di varia natura, e sviluppo di microservizi.</p>
         </section>
+        <ul class="social-links">
+            <!--
+            <li><a href="#"><img src="path-to-facebook-icon" alt="Facebook"></a></li>
+            <li><a href="#"><img src="path-to-twitter-icon" alt="Twitter"></a></li>
+            <li><a href="#"><img src="path-to-instagram-icon" alt="Instagram"></a></li>
+            -->
+            <a href="https://www.linkedin.com/in/andrei-alexandru-dabija/"><img alt="Python" src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+        </ul>
     </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

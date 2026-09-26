@@ -14,6 +14,50 @@
     var yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+    /* --- i18n IT/EN (default EN) --- */
+    var I18N = {
+        en: {
+            "nav.projects": "Projects", "nav.site": "Site",
+            "hero.title1": "My", "hero.title2": "Projects",
+            "hero.statement": "A selection of my public repositories.",
+            "hero.cta1": "View projects", "hero.cta2": "About me",
+            "work.title": "My Projects", "work.loading": "Loading projects from GitHub\u2026",
+            "meta.updated": "updated", "desc.fallback": "Open source project."
+        },
+        it: {
+            "nav.projects": "Progetti", "nav.site": "Sito",
+            "hero.title1": "I miei", "hero.title2": "Progetti",
+            "hero.statement": "Una selezione dei miei repository pubblici.",
+            "hero.cta1": "Vedi i progetti", "hero.cta2": "Chi sono",
+            "work.title": "I miei progetti", "work.loading": "Caricamento progetti da GitHub\u2026",
+            "meta.updated": "agg.", "desc.fallback": "Progetto open source."
+        }
+    };
+    var lang = localStorage.getItem("portfolio-lang") || "en";
+    var lastData = null;
+
+    function t(key) { return (I18N[lang] && I18N[lang][key]) || (I18N.en[key] || key); }
+
+    function applyI18n() {
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+            var k = el.getAttribute("data-i18n");
+            if (I18N[lang][k]) el.textContent = I18N[lang][k];
+        });
+        document.querySelectorAll(".lang-btn").forEach(function (b) {
+            b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+        });
+        if (lastData) render(lastData.projects, lastData.generatedAt);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(function (b) {
+        b.addEventListener("click", function () {
+            lang = b.getAttribute("data-lang");
+            localStorage.setItem("portfolio-lang", lang);
+            applyI18n();
+        });
+    });
+
     function escapeHtml(s) {
         return String(s || "").replace(/[&<>"']/g, function (c) {
             return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -39,22 +83,24 @@
                     stars +
                 "</div>" +
                 '<h3 class="project__title">' + escapeHtml(p.name) + "</h3>" +
-                '<p class="project__desc">' + escapeHtml(p.description || "Progetto open source.") + "</p>" +
+                '<p class="project__desc">' + escapeHtml(p.description || t("desc.fallback")) + "</p>" +
                 '<div class="project__tags">' + tags.join("") + "</div>" +
             "</a>"
         );
     }
 
     function render(projects, generatedAt) {
+        lastData = { projects: projects, generatedAt: generatedAt };
         if (!projects || !projects.length) {
-            grid.innerHTML = '<p class="work__loading">Nessun progetto pubblico da mostrare.</p>';
+            grid.innerHTML = '<p class="work__loading">' +
+                (lang === "it" ? "Nessun progetto pubblico da mostrare." : "No public projects to show.") + "</p>";
             return;
         }
         grid.innerHTML = projects.map(card).join("");
         if (meta) {
             var when = generatedAt ? new Date(generatedAt) : new Date();
-            meta.textContent = projects.length + " repository \u00b7 agg. " +
-                when.toLocaleDateString("it-IT", { year: "numeric", month: "short", day: "numeric" });
+            meta.textContent = projects.length + " repository \u00b7 " + t("meta.updated") + " " +
+                when.toLocaleDateString(lang === "it" ? "it-IT" : "en-GB", { year: "numeric", month: "short", day: "numeric" });
         }
     }
 
@@ -85,6 +131,9 @@
                     'Vedi <a class="footer__link" href="https://github.com/' + USER + '">GitHub</a>.</p>';
             });
     }
+
+    // applica la lingua salvata all'avvio
+    applyI18n();
 
     // 1) projects.json (preferito, niente rate limit)
     fetch("projects.json?" + Date.now())

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrei Alexandru Dabija | Progetti Open Source</title>
-    <meta name="description" content="Portfolio open source di Andrei Alexandru Dabija (XtremeAlex): microservizi, GraalVM native, AI, cloud-native. Aggiornato automaticamente dai repository GitHub.">
+    <title>Andrei Alexandru Dabija | My Projects</title>
+    <meta name="description" content="Open source projects by Andrei Alexandru Dabija (XtremeAlex): microservices, GraalVM native, AI, cloud-native.">
     <meta name="author" content="Andrei Alexandru Dabija">
     <meta name="theme-color" content="#0a0a0a">
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="Andrei Alexandru Dabija | Progetti Open Source">
-    <meta property="og:description" content="Portfolio open source aggiornato automaticamente dai repository GitHub.">
-    <link rel="stylesheet" href="styles.css?v=1">
+    <meta property="og:title" content="Andrei Alexandru Dabija | My Projects">
+    <meta property="og:description" content="Open source projects, updated automatically from GitHub.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/30697661?v=4">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/30697661?v=4">
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
     <header class="nav">
@@ -18,11 +20,19 @@
             <a href="#" class="nav__logo"><span>2A</span><span class="nav__logo-d">D</span></a>
             <nav class="nav__menu">
                 <ul class="nav__list">
-                    <li><a href="#work" class="nav__link">Progetti</a></li>
-                    <li><a href="https://2ad.bubume.it/" class="nav__link" target="_blank" rel="noopener">Sito</a></li>
+                    <li><a href="#work" class="nav__link" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="https://2ad.bubume.it/" class="nav__link" target="_blank" rel="noopener" data-i18n="nav.site">Site</a></li>
                     <li><a href="https://github.com/XtremeAlex" class="nav__link" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </nav>
+            <div class="nav__lang" role="group" aria-label="Language">
+                <button class="lang-btn" data-lang="en" aria-label="English" title="English">
+                    <svg class="lang-flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#012169"/><path d="M0 0L3 2M0 2L3 0" stroke="#fff" stroke-width="0.3"/><path d="M0 0L3 2M0 2L3 0" stroke="#C8102E" stroke-width="0.15"/><path d="M1.5 0V2M0 1H3" stroke="#fff" stroke-width="0.4"/><path d="M1.5 0V2M0 1H3" stroke="#C8102E" stroke-width="0.2"/></svg>
+                </button>
+                <button class="lang-btn" data-lang="it" aria-label="Italiano" title="Italiano">
+                    <svg class="lang-flag" viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -33,21 +43,22 @@
                     <span>41.9028&deg;N &middot; 12.4964&deg;E</span>
                     <span class="hero__nick">XTREMEALEX</span>
                 </div>
-                <h1 class="hero__title">
-                    <span class="hero__title-line">Progetti</span>
-                    <span class="hero__title-line hero__title-line--accent">Open Source</span>
-                </h1>
+                <div class="hero__head">
+                    <img class="hero__avatar" src="https://avatars.githubusercontent.com/u/30697661?v=4" alt="Andrei Alexandru Dabija" width="88" height="88" loading="eager">
+                    <h1 class="hero__title">
+                        <span class="hero__title-line" data-i18n="hero.title1">My</span>
+                        <span class="hero__title-line hero__title-line--accent" data-i18n="hero.title2">Projects</span>
+                    </h1>
+                </div>
                 <div class="hero__divider"></div>
                 <p class="hero__subtitle">Software Architect &middot; Team Leader &middot; AI</p>
-                <p class="hero__statement">
-                    Una selezione dei miei repository pubblici.
-                </p>
+                <p class="hero__statement" data-i18n="hero.statement">A selection of my public repositories.</p>
                 <div class="hero__actions">
                     <a href="#work" class="btn btn--primary">
-                        <span>Vedi i progetti</span><span class="btn__arrow">&rarr;</span>
+                        <span data-i18n="hero.cta1">View projects</span><span class="btn__arrow">&rarr;</span>
                     </a>
                     <a href="https://2ad.bubume.it/" class="btn btn--ghost" target="_blank" rel="noopener">
-                        <span>Chi sono</span>
+                        <span data-i18n="hero.cta2">About me</span>
                     </a>
                 </div>
             </div>
@@ -58,11 +69,11 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-header__index">01</span>
-                    <h2 class="section-header__title">Progetti</h2>
+                    <h2 class="section-header__title" data-i18n="work.title">My Projects</h2>
                     <span class="section-header__meta" id="projects-meta"></span>
                 </div>
                 <div class="work__grid" id="projects-grid">
-                    <p class="work__loading">Caricamento progetti dal profilo GitHub&hellip;</p>
+                    <p class="work__loading" data-i18n="work.loading">Loading projects from GitHub&hellip;</p>
                 </div>
             </div>
         </section>
@@ -73,7 +84,7 @@
             <div class="footer__inner">
                 <span class="footer__copy">&copy; <span id="year"></span> 2AD &mdash; Andrei Alexandru Dabija</span>
                 <div class="footer__right">
-                    <a href="https://2ad.bubume.it/" class="footer__link" target="_blank" rel="noopener">Sito</a>
+                    <a href="https://2ad.bubume.it/" class="footer__link" target="_blank" rel="noopener" data-i18n="nav.site">Site</a>
                     <a href="https://github.com/XtremeAlex" class="footer__link" target="_blank" rel="noopener">GitHub</a>
                     <a href="https://www.linkedin.com/in/andrei-alexandru-dabija/" class="footer__link" target="_blank" rel="noopener">LinkedIn</a>
                 </div>
@@ -81,6 +92,6 @@
         </div>
     </footer>
 
-    <script src="app.js?v=1"></script>
+    <script src="app.js?v=2"></script>
 </body>
 </html>

@@ -1,87 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Blog</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-
-        body {
-            background-color: #000000;
-            color: #000000;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .container-sm {
-            padding-top: 100px;
-        }
-
-        .profile-card {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 50px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            position: relative;
-        }
-        .profile-card img.profile-pic {
-            width: 150px;
-            border: 5px solid #000000;
-            border-radius: 50%;
-            position: absolute;
-            top: -80px;
-            left: calc(50% - 75px);
-            background: black;
-        }
-        .social-links {
-            padding: 0;
-            list-style: none;
-        }
-        .social-links li {
-            display: inline;
-            margin: 5px;
-        }
-
-        .my-30{
-            padding-top: 50px;
-        }
-    </style>
+    <title>Andrei Alexandru Dabija | Progetti Open Source</title>
+    <meta name="description" content="Portfolio open source di Andrei Alexandru Dabija (XtremeAlex): microservizi, GraalVM native, AI, cloud-native. Aggiornato automaticamente dai repository GitHub.">
+    <meta name="author" content="Andrei Alexandru Dabija">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Andrei Alexandru Dabija | Progetti Open Source">
+    <meta property="og:description" content="Portfolio open source aggiornato automaticamente dai repository GitHub.">
+    <link rel="stylesheet" href="styles.css?v=1">
 </head>
-
 <body>
-<div class="container-sm">
-    <header class="text-center mt-5">
-        <h1> </h1>
+    <header class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo"><span>2A</span><span class="nav__logo-d">D</span></a>
+            <nav class="nav__menu">
+                <ul class="nav__list">
+                    <li><a href="#work" class="nav__link">Progetti</a></li>
+                    <li><a href="https://2ad.bubume.it/" class="nav__link" target="_blank" rel="noopener">Sito</a></li>
+                    <li><a href="https://github.com/XtremeAlex" class="nav__link" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="profile-card mx-auto">
-        <img src="https://avatars.githubusercontent.com/u/30697661" alt="Alex's Profile" class="img-fluid profile-pic">
-        <section class="my-30">
-            <h2>Alex</h2>
-            <p>
-                Sono impegnato su vari fronti nello sviluppo software, mi dedico alla sperimentazione e all'innovazione nel poco tempo libero che ho.
-                Appassionato di architetture in cloud, lavoro principalmente con Docker, OpenShift, Azure e Kubernetes.
-                Potete trovare i miei progetti su <a href="https://github.com/XtremeAlex" target="_blank">GitHub - XtremeAlex</a>.</p>
-            <p>Con una vasta esperienza nella gestione di progetti IT e nel deployment di soluzioni cloud-native, ho collaborato con importanti istituzioni, ottenendo riconoscimenti per la qualità del mio lavoro.</p>
-            <p>Competenze tecniche: Java, Angular, Docker, Kubernetes, CI/CD con Azure DevOps, database di varia natura, e sviluppo di microservizi.</p>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero__content">
+                <div class="hero__meta">
+                    <span>41.9028&deg;N &middot; 12.4964&deg;E</span>
+                    <span class="hero__nick">XTREMEALEX</span>
+                </div>
+                <h1 class="hero__title">
+                    <span class="hero__title-line">Progetti</span>
+                    <span class="hero__title-line hero__title-line--accent">Open Source</span>
+                </h1>
+                <div class="hero__divider"></div>
+                <p class="hero__subtitle">Software Architect &middot; Team Leader &middot; AI</p>
+                <p class="hero__statement">
+                    Una selezione dei miei repository pubblici. Questa pagina si aggiorna
+                    automaticamente dai progetti che pubblico su GitHub.
+                </p>
+                <div class="hero__actions">
+                    <a href="#work" class="btn btn--primary">
+                        <span>Vedi i progetti</span><span class="btn__arrow">&rarr;</span>
+                    </a>
+                    <a href="https://2ad.bubume.it/" class="btn btn--ghost" target="_blank" rel="noopener">
+                        <span>Chi sono</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero__visual"><div class="dot-matrix"><div class="dot-matrix__grid"></div></div></div>
         </section>
-        <ul class="social-links">
-            <!--
-            <li><a href="#"><img src="path-to-facebook-icon" alt="Facebook"></a></li>
-            <li><a href="#"><img src="path-to-twitter-icon" alt="Twitter"></a></li>
-            <li><a href="#"><img src="path-to-instagram-icon" alt="Instagram"></a></li>
-            -->
-            <a href="https://www.linkedin.com/in/andrei-alexandru-dabija/"><img alt="Python" src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-        </ul>
-    </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <section class="work" id="work">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__index">01</span>
+                    <h2 class="section-header__title">Progetti</h2>
+                    <span class="section-header__meta" id="projects-meta"></span>
+                </div>
+                <div class="work__grid" id="projects-grid">
+                    <p class="work__loading">Caricamento progetti dal profilo GitHub&hellip;</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <span class="footer__copy">&copy; <span id="year"></span> 2AD &mdash; Andrei Alexandru Dabija</span>
+                <div class="footer__right">
+                    <a href="https://2ad.bubume.it/" class="footer__link" target="_blank" rel="noopener">Sito</a>
+                    <a href="https://github.com/XtremeAlex" class="footer__link" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/andrei-alexandru-dabija/" class="footer__link" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js?v=1"></script>
 </body>
-
 </html>

@@ -1,8 +1,18 @@
 {
-  "generatedAt": "2026-10-30T10:57:47.782Z",
+  "generatedAt": "2026-10-31T10:30:12.899Z",
   "user": "XtremeAlex",
-  "count": 26,
+  "count": 27,
   "projects": [
+    {
+      "name": ".github",
+      "description": "Governance centrale account: standard, health file, workflow riusabili (.ai/)",
+      "url": "https://github.com/XtremeAlex/.github",
+      "homepage": "",
+      "language": "",
+      "topics": [],
+      "stars": 0,
+      "updated": "2026-10-30T14:26:49Z"
+    },
     {
       "name": "xtr-toolkit-hosts",
       "description": "Servizio dedicato alla modifica del file di host",
